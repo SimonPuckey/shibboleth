@@ -1,0 +1,26 @@
+{
+  "name": "db-integration-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "dynamodb & jest --bail ; npm run kill-dynamodb",
+    "kill-dynamodb": "lsof -t -i tcp:8000 | xargs kill"
+  },
+  "author": "Simon Puckey",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "jest": "^21.2.1",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.230.1",
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  }
+}
